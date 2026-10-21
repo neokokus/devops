@@ -1,7 +1,7 @@
 # Laboratory: Harbor, Docker, Falco, Rsyslog
 Этот репозиторий содержит документацию и конфигурацию для тестового стенда.
 ## Архитектура
-![Схема архитектуры](docs/arc.jpg)
+![Схема архитектуры](Documents/arc.jpg)
 Стенд состоит из двух виртуальных машин в приватной сети:
 
 1. **`harbor.local` (192.168.56.11)** — 4 GB RAM, 2 CPU.
@@ -37,4 +37,4 @@
 ☑ Установлен Docker и Docker Compose на ВМ harbor.
 ☑ Сгенерированы TLS-сертификаты (CA, harbor.crt, harbor.key).
 ☑ Установлен Harbor (v2.14.2) с Trivy. Доступен по адресу https://registry.harbor.local.
-![Дашборд Harbor](docs/harborApi.png)
+![Дашборд Harbor](Documents/harborApi.png)
