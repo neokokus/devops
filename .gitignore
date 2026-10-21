@@ -1,1 +1,7 @@
 .vagrant/
+*.key
+*.csr
+*.log
+*.tgz
+harbor/
+harbor.yml
