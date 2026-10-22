@@ -7,8 +7,9 @@ sudo apt install -y docker.io docker-compose-v2
 sudo systemctl enable --now docker
 sudo usermod -aG docker vagrant
 # Перезайти в сессию
+```
 2. Настройка доверия к сертификату Harbor
-bash
+```bash
 # Создаем папку (имя папки должно точно совпадать с hostname Harbor)
 sudo mkdir -p /etc/docker/certs.d/registry.harbor.local/
 
@@ -17,8 +18,9 @@ sudo cp /vagrant/ca.crt /etc/docker/certs.d/registry.harbor.local/
 
 # Перезапускаем Docker, чтобы он подхватил сертификат
 sudo systemctl restart docker
+```
 3. Проверка и первый Push
-bash
+```bash
 # Логин
 docker login registry.harbor.local
 
