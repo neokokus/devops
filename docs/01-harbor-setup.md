@@ -7,8 +7,9 @@ sudo apt install -y docker.io docker-compose-v2
 sudo systemctl enable --now docker
 sudo usermod -aG docker vagrant
 # Не забудьте перезайти в сессию (exit -> vagrant ssh), чтобы применились права
-2. Генерация TLS-сертификатов
-bash
+```
+## 2. Генерация TLS-сертификатов
+```bash
 mkdir -p /home/vagrant/certs
 cd /home/vagrant/certs
 
@@ -45,8 +46,9 @@ openssl x509 -req -sha512 -days 3650 -extfile v3.ext \
 
 # Копируем публичный CA в общую папку (он нужен для клиентов)
 cp /home/vagrant/certs/ca.crt /vagrant/
+```
 3. Установка Harbor
-bash
+```bash
 cd /opt
 sudo wget https://github.com/goharbor/harbor/releases/download/v2.14.2/harbor-offline-installer-v2.14.2.tgz
 sudo tar xzf harbor-offline-installer-v2.14.2.tgz

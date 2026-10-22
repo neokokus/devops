@@ -11,9 +11,9 @@
 
 Выполните на проблемной ВМ:
 
-echo "nameserver 8.8.8.8" | sudo tee /etc/resolv.conf > /dev/null
-echo "nameserver 1.1.1.1" | sudo tee -a /etc/resolv.conf > /dev/null
+`echo "nameserver 8.8.8.8" | sudo tee /etc/resolv.conf > /dev/null`
+`echo "nameserver 1.1.1.1" | sudo tee -a /etc/resolv.conf > /dev/null`
 Проверьте, что резолвинг работает:
 
-ping -c 2 us.archive.ubuntu.com
-После этого apt update и установка пакетов должны проходить без ошибок.
+`ping -c 2 us.archive.ubuntu.com`
+После этого `pt update` и установка пакетов должны проходить без ошибок.
