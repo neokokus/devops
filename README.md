@@ -23,14 +23,22 @@
 
 ## Быстрый старт (как поднять заново)
 
+## 🚀 Быстрый старт (как поднять заново)
+
 1. Убедитесь, что установлены Vagrant и VirtualBox.
 2. Склонируйте репозиторий.
-3. Выполните `vagrant up` (поднимутся обе ВМ).
-4. Пропишите в `/etc/hosts` на ВМ и на вашем ПК:
-   ```text
-   192.168.56.11 registry.harbor.local
-   192.168.56.12 docker.local
-   
+3. Выполните `vagrant up` (поднимутся **три** ВМ: `harbor`, `docker`, `storage`).
+4. **Если при установке пакетов возникает ошибка `Temporary failure resolving`**, выполните фикс DNS на всех ВМ (см. [docs/00-dns-fix.md](docs/00-dns-fix.md)).
+5. Пропишите в `/etc/hosts` на **всех трех ВМ** (и на вашем ПК для доступа к веб-интерфейсу):
+	```text
+	192.168.56.10 storage.local
+	192.168.56.11 registry.harbor.local
+	192.168.56.12 docker.local 
+	```
+6. Настройте NFS-хранилище на ВМ storage и подключите его к Harbor (см. docs/03-storage-nfs.md).
+7. На ВМ harbor: установите Docker, сгенерируйте TLS-сертификаты и запустите Harbor (см. docs/01-harbor-setup.md).
+8. На ВМ docker: установите Docker, настройте доверие к сертификату и сделайте первый docker push (см. docs/02-docker-client-setup.md).
+
 
 - [x] Созданы 2 ВМ (Ubuntu 24.04) через Vagrant.
 - [x] Настроена сеть и пропиcаны /etc/hosts на всех узлах.
