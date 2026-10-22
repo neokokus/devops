@@ -35,7 +35,7 @@
 	192.168.56.11 registry.harbor.local
 	192.168.56.12 docker.local 
 	```
-6. Настройте NFS-хранилище на ВМ storage и подключите его к Harbor (см. docs/03-storage-nfs.md).
+6. Настройте NFS-хранилище на ВМ storage и подключите его к Harbor (см. docs/03-storage-nfs.md) *Необходимо далее для storage.local.
 7. На ВМ harbor: установите Docker, сгенерируйте TLS-сертификаты и запустите Harbor (см. docs/01-harbor-setup.md).
 8. На ВМ docker: установите Docker, настройте доверие к сертификату и сделайте первый docker push (см. docs/02-docker-client-setup.md).
 
