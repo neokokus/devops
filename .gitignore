@@ -7,3 +7,4 @@ harbor/
 harbor.yml
 .DS_Store
 Thumbs.db
+*.vdi
