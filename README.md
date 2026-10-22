@@ -38,3 +38,9 @@
 ☑ Сгенерированы TLS-сертификаты (CA, harbor.crt, harbor.key).
 ☑ Установлен Harbor (v2.14.2) с Trivy. Доступен по адресу https://registry.harbor.local.
 ![Дашборд Harbor](Documents/harborApi.png)
+☑ Настроен Docker на ВМ `docker`.
+☑ Настроено доверие к сертификату Harbor.
+☑ Создан проект `test` в Harbor.
+☑ Выполнен первый успешный `docker push` (образ alpine:v1.0).
+![Успешный пуш (Дашборд Харбор](Documents/push.png)
+![Успешный пуш (Терминал)](Documents/push2.png)
