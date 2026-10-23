@@ -26,15 +26,13 @@ Vagrant.configure("2") do |config|
     storage.vm.hostname = "storage.local"
     storage.vm.network "private_network", ip: "192.168.56.10"
     
+    storage.vm.disk :disk, size: "40GB", name: "storage_disk"
+
     storage.vm.provider "virtualbox" do |vb|
       vb.memory = "1024"
       vb.cpus = 1
       vb.name = "storage-vm"
-      
-      vb.customize ['createhd', '--filename', 'storage_disk.vdi', '--size', 40 * 1024]
-      
-      # Подключаем диск к виртуалке как SATA-контроллер (второй диск)
-      vb.customize ['storageattach', :id, '--storagectl', 'SATA Controller', '--port', 1, '--device', 0, '--type', 'hdd', '--medium', 'storage_disk.vdi']
+
     end
   end
 end
