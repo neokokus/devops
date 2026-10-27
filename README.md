@@ -41,14 +41,24 @@
 
 
 - [x] Созданы 2 ВМ (Ubuntu 24.04) через Vagrant.
+![VirtualBox](Documents/VM.png)
 - [x] Настроена сеть и пропиcаны /etc/hosts на всех узлах.
+![hosts](Documents/hosts.png)
 - [x] Установлен Docker и Docker Compose на ВМ harbor.
 - [x] Сгенерированы TLS-сертификаты (CA, harbor.crt, harbor.key).
+![Certs](Documents/certs.png)
 - [x] Установлен Harbor (v2.14.2) с Trivy. Доступен по адресу https://registry.harbor.local.
+![Harbor](Documents/harbor_status.png)
 ![Дашборд Harbor](Documents/harborApi.png)
 - [x] Настроен Docker на ВМ `docker`.
+![Проверка работоспособности докера](Documents/docker_work.png)
 - [x] Настроено доверие к сертификату Harbor.
+![Certs](Documents/dockercerts.png)
 - [x] Создан проект `test` в Harbor.
+![Проект test](Documents/test.png)
 - [x] Выполнен первый успешный `docker push` (образ alpine:v1.0).
-![Успешный пуш (Дашборд Харбор](Documents/push.png)
-![Успешный пуш (Терминал)](Documents/push2.png)
+![Докер пуш](Documents/docker_push_harbor.png)
+![Успешный пуш (Дашборд Харбор](Documents/pushAlp.png)
+- [x] Установлен и испытан Falco 
+![Успешный пуш (Дашборд Харбор](Documents/falco_test.png)
+
