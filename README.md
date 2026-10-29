@@ -36,9 +36,10 @@
 	192.168.56.12 docker.local 
 	```
 6. Настройте NFS-хранилище на ВМ storage и подключите его к Harbor (см. docs/03-storage-nfs.md) *Необходимо далее для storage.local.
-7. На ВМ harbor: установите Docker, сгенерируйте TLS-сертификаты и запустите Harbor (см. docs/01-harbor-setup.md).
+7. На ВМ harbor: установите Docker, сгенерируйте TLS-сертификаты, установите и запустите Harbor (см. docs/01-harbor-setup.md).
 8. На ВМ docker: установите Docker, настройте доверие к сертификату и сделайте первый docker push (см. docs/02-docker-client-setup.md).
-
+9. На обоих ВМ: установите Falco и добавьте репозиторий (см. docs/04-falco_setup.md).
+10.На обоих ВМ: установите Rsyslog, настройте ВМ Harbor на сбор логов, ВМ Docker на отправку (см. docs/05-rsyslog-setup.md).
 
 - [x] Созданы 2 ВМ (Ubuntu 24.04) через Vagrant.
 ![VirtualBox](Documents/VM.png)
