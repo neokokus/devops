@@ -10,7 +10,7 @@
    - (В планах) Falco и Rsyslog.
 2. **`docker.local` (192.168.56.12)** — 2 GB RAM, 1 CPU.
    - Docker Engine (клиент).
-   - (В планах) Falco и Rsyslog.
+   - Falco и Rsyslog.
 
 ## Используемые версии
 
@@ -61,4 +61,5 @@
 ![Успешный пуш (Дашборд Харбор](Documents/pushAlp.png)
 - [x] Установлен и испытан Falco 
 ![Успешный пуш (Дашборд Харбор](Documents/falco_test.png)
-
+- [x] Установлен и испытан Rsyslog
+![Успешный сбор логов rsyslog на ВМ harbor](Documents/rsyslog(read).png)
