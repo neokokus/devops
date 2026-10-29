@@ -1,5 +1,7 @@
 # Laboratory: Harbor, Docker, Falco, Rsyslog
 Этот репозиторий содержит документацию и конфигурацию для тестового стенда.
+- **docs:** Указания по установке и подготовке тестового стенда.
+- **docs_harbor:** Указания по установке доп. возможностей для харбор, предусмотренных сообществом.
 ## Архитектура
 ![Схема архитектуры](Documents/arc.jpg)
 Стенд состоит из двух виртуальных машин в приватной сети:
@@ -78,6 +80,7 @@
   *Проверка:* Попытка скачать неподписанный образ `ubuntu` завершается ошибкой `signature not found`.
   ![install](Harbor_func/cosign_install.png)
   ![key](Harbor_func/cosign_key.png)
+  ![Prevent vulnerable](Harbor_func/prevent.png)
   ![sign](Harbor_func/cosign_sign.png))
   ![signed](Harbor_func/signed_alpine.png)
   ![unsigned](Harbor_func/no_signed.png)
