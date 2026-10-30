@@ -94,4 +94,7 @@
 3. Если в образе есть уязвимость уровня High или Critical, Harbor запрещает его скачивание (pull) .
 4. Разработчик будет вынужден обновить библиотеку, пересобрать образ и запушить его заново.
 В настройках проекта включена опция `Prevent vulnerable images from running` (уровень `Low` и выше).
+Попытка скачать уязвимый образ завершается ошибкой `412 Precondition Failed`, что подтверждает работу политики `Prevent vulnerable images from running`
 ![Prevent vulnerable](Harbor_func/prevent.png)
+![Prevent vulnerable](Harbor_func/trivy-vulnerability.png)
+![Prevent vulnerable](Harbor_func/Vulner_docker.png)
