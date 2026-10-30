@@ -26,7 +26,8 @@ cosign sign --key cosign.key --new-bundle-format=false --use-signing-config=fals
 Зайдите в проект test -> Configuration.
 
 В разделе Deployment security включите галочку Cosign.
-![Prevent vulnerable](Harbor_func/prevent.png)
+![Prevent vulnerable](Harbor_func/prevent.png).
+
 Нажмите Save.
 
 После этого Harbor разрешает скачивать только подписанные образы.
