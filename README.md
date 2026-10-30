@@ -96,5 +96,5 @@
 В настройках проекта включена опция `Prevent vulnerable images from running` (уровень `Low` и выше).
 Попытка скачать уязвимый образ завершается ошибкой `412 Precondition Failed`, что подтверждает работу политики `Prevent vulnerable images from running`
 ![Prevent vulnerable](Harbor_func/prevent.png)
-![Prevent vulnerable](Harbor_func/trivy-vulnerability.png)
+![Prevent vulnerable](Harbor_func/trivy_vulnerability.png)
 ![Prevent vulnerable](Harbor_func/Vulner_docker.png)
