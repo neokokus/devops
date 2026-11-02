@@ -145,3 +145,13 @@
 ![RBAC](Harbor_func/pull_dev.png)
 3. Проверено: при входе под `dev1` вкладка `Configuration` недоступна для редактирования, а попытка изменить политики безопасности завершается ошибкой `403 Forbidden`.
 ![RBAC](Harbor_func/dev_role.png)
+
+### Неизменяемость тегов (Tag Immutability)
+
+Для защиты от перезаписи релизных версий в проекте `test` включено правило неизменяемости для всех тегов (`**`).
+![tag_immutability](Harbor_func/tag_im1.png)
+![tag_immutability](Harbor_func/tag_im2.png)
+![tag_immutability](Harbor_func/tag_im3.png)
+
+**Проверка:** Попытка перезаписать существующий тег (`alpine:v1.0`) другим образом завершается ошибкой `configured as immutable.`. Это гарантирует, что под одним и тем же тегом всегда лежит один и тот же образ.
+![tag_immutability](Harbor_func/tag_im4.png)
