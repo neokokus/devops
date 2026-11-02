@@ -79,7 +79,7 @@
  Настроена проверка подписей. Образ `alpine` подписан ключом Cosign, в Harbor включен режим `Cosign` (Content Trust). 
   *Проверка:* Попытка скачать неподписанный образ `ubuntu` завершается ошибкой `signature not found`.
   ![install](Harbor_func/cosign_install.png)
-  ![cosign_key](Harbor_func/cosign_key.png)
+  ![cosign_key](Harbor_func/cosigne_key.png)
   ![Prevent vulnerable](Harbor_func/prevent.png)
   ![sign](Harbor_func/cosign_sign.png))
   ![signed](Harbor_func/signed_alpine.png)
