@@ -146,7 +146,7 @@
 3. Проверено: при входе под `dev1` вкладка `Configuration` недоступна для редактирования, а попытка изменить политики безопасности завершается ошибкой `403 Forbidden`.
 ![RBAC](Harbor_func/dev_role.png)
 
-### Неизменяемость тегов (Tag Immutability)
+## Неизменяемость тегов (Tag Immutability)
 
 Для защиты от перезаписи релизных версий в проекте `test` включено правило неизменяемости для всех тегов (`**`).
 ![tag_immutability](Harbor_func/tag_im1.png)
@@ -155,3 +155,12 @@
 
 **Проверка:** Попытка перезаписать существующий тег (`alpine:v1.0`) другим образом завершается ошибкой `configured as immutable.`. Это гарантирует, что под одним и тем же тегом всегда лежит один и тот же образ.
 ![tag_immutability](Harbor_func/tag_im4.png)
+
+## Квоты на проекты (Project Quotas)
+
+Для проверки механизма квот был создан отдельный проект `quota-test` с лимитом 10 MiB.
+![quota](Harbor_func/quota-test1.png)
+![quota](Harbor_func/quota-test2.png)
+
+**Проверка:** Попытка запушить образ `nginx` (24.4 МБ) в проект `quota-test` завершилась ошибкой `error from registry: adding 24.4 MiB of storage resource, which when updated to current usage of 0 B will exceed the configured upper limit of 10.0 MiB.`. Harbor заблокировал загрузку, так как образ превышает установленный лимит. Это подтверждает работу защиты диска от переполнения.
+![quota](Harbor_func/quota-test3.png)
