@@ -164,3 +164,20 @@
 
 **Проверка:** Попытка запушить образ `nginx` (24.4 МБ) в проект `quota-test` завершилась ошибкой `error from registry: adding 24.4 MiB of storage resource, which when updated to current usage of 0 B will exceed the configured upper limit of 10.0 MiB.`. Harbor заблокировал загрузку, так как образ превышает установленный лимит. Это подтверждает работу защиты диска от переполнения.
 ![quota](Harbor_func/quota-test3.png)
+
+## Политики очистки (Retention)
+
+Для автоматического удаления старых образов в проекте `test` настроено правило Retention:
+![Retention](Harbor_func/Retention1.png)
+![Retention](Harbor_func/Retention2.png)
+- **Repository:** `**` (все репозитории)
+- **Quantity to retain:** `2` (оставлять только 2 последних тега)
+- **Schedule:** вручную
+
+**Проверка:** Выполнен `Dry Run` 
+![Retention](Harbor_func/Retention3.png)
+который показал, что Harbor удалит старые теги (например, `alpine:v1.0`). 
+После реального запуска правила: 
+![Retention](Harbor_func/Retention4.png) старый тег был удален, что подтверждает работу автоочистки.
+Также возможен просмотр логов:
+![Retention](Harbor_func/Retention5.png)
