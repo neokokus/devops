@@ -16,7 +16,7 @@ bash```
 sudo nano /etc/rsyslog.d/10-server.conf
 ```
 Вставляем в него следующие правила (прием по TCP порту 514 и сохранение в папку /var/log/remote/ с разбивкой по имени хоста и программе):
-![10-server.conf](Documents/conf(server).png)
+![10-server.conf](devops/Documents/conf(server).png)
 ```text
 module(load="imtcp")
 input(type="imtcp" port="514")
