@@ -29,7 +29,7 @@ template(name="RemoteLogs" type="string" string="/var/log/remote/%HOSTNAME%/%PRO
 sudo systemctl restart rsyslog
 sudo ss -tulnp | grep 514
 bash```
-2. Настройка клиента (ВМ docker)
+## 2. Настройка клиента (ВМ docker)
 На машине docker настраиваем отправку всех логов на сервер harbor (IP 192.168.56.11). Символ @@ означает использование надежного TCP-протокола.
 
 ```bash
@@ -52,7 +52,7 @@ bash```
 ```bash
 sudo systemctl restart rsyslog
 bash```
-3. Проверка работы
+## 3. Проверка работы
 На машине docker отправляем тестовое сообщение:
 ```bash
 logger -t test-client "Hello from Docker"
@@ -65,3 +65,19 @@ cat /var/log/remote/docker/test-client.log
 bash```
 ![cat](Documents/rsyslog(read).png)
 Ожидаемый результат: В папке /var/log/remote/ появляется директория с именем хоста клиента, внутри которой лежат лог-файлы. Алерты Falco (которые он пишет в syslog) также будут автоматически попадать в этот централизованный сбор.
+
+### Пересылка логов journald в Rsyslog
+
+Чтобы системные логи (journald), включая логи Docker и Falco, попадали в централизованный сбор, на обеих ВМ включена пересылка:
+
+В файле `/etc/systemd/journald.conf` установлено:
+```bash
+ForwardToSyslog=yes 	
+	bash```
+![journald](Documents/journald1.png)
+![journald](Documents/journald3.png)
+ТЕСТ:
+Отправка:
+![journald](Documents/journald4.png)
+Прием:
+![journald](Documents/journald5).png)

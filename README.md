@@ -9,7 +9,7 @@
 1. **`harbor.local` (192.168.56.11)** — 4 GB RAM, 2 CPU.
    - Приватный реестр образов (Harbor).
    - Сканер уязвимостей (Trivy).
-   - (В планах) Falco и Rsyslog.
+   - Falco и Rsyslog.
 2. **`docker.local` (192.168.56.12)** — 2 GB RAM, 1 CPU.
    - Docker Engine (клиент).
    - Falco и Rsyslog.
